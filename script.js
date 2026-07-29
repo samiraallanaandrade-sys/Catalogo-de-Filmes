@@ -1,58 +1,74 @@
-// 1. Lista de filmes (Array de Objetos)
-// Podes adicionar ou modificar os filmes aqui!
+// Lista completa dos filmes informados
 const filmes = [
-    {
-        titulo: "Inception",
-        ano: 2010,
-        genero: "Ficção Científica",
-        poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400"
-    },
-    {
-        titulo: "Interstellar",
-        ano: 2014,
-        genero: "Aventura / Sci-Fi",
-        poster: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400"
-    },
-    {
-        titulo: "The Dark Knight",
-        ano: 2008,
-        genero: "Ação",
-        poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=400"
-    },
-    {
-        titulo: "Spider-Man",
-        ano: 2018,
-        genero: "Animação",
-        poster: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400"
-    }
+  { titulo: "Um Sonho de Liberdade", ano: 1994, categoria: "Drama" },
+  { titulo: "O Poderoso Chefão", ano: 1972, categoria: "Crime / Drama" },
+  { titulo: "A Lista de Schindler", ano: 1993, categoria: "História / Drama" },
+  { titulo: "Interestelar", ano: 2014, categoria: "Ficção Científica" },
+  { titulo: "Cidade de Deus", ano: 2002, categoria: "Crime / Drama" },
+  { titulo: "Matrix", ano: 1999, categoria: "Ficção Científica / Ação" },
+  { titulo: "De Volta para o Futuro", ano: 1985, categoria: "Aventura / Ficção" },
+  { titulo: "O Senhor dos Anéis: A Sociedade do Anel", ano: 2001, categoria: "Fantasia / Aventura" },
+  { titulo: "O Senhor dos Anéis: As Duas Torres", ano: 2002, categoria: "Fantasia / Aventura" },
+  { titulo: "O Senhor dos Anéis: O Retorno do Rei", ano: 2003, categoria: "Fantasia / Aventura" },
+  { titulo: "Batman: O Cavaleiro das Trevas", ano: 2008, categoria: "Ação / Crime" },
+  { titulo: "Star Wars: Episódio IV - Uma Nova Esperança", ano: 1977, categoria: "Ficção / Aventura" },
+  { titulo: "Star Wars: O Império Contra-Ataca", ano: 1980, categoria: "Ficção / Aventura" },
+  { titulo: "Gladiador", ano: 2000, categoria: "Ação / Drama" },
+  { titulo: "Velozes e Furiosos", ano: 2001, categoria: "Ação" },
+  { titulo: "+ Velozes + Furiosos", ano: 2003, categoria: "Ação" },
+  { titulo: "Velozes e Furiosos: Desafio em Tóquio", ano: 2006, categoria: "Ação" },
+  { titulo: "Velozes e Furiosos 4", ano: 2009, categoria: "Ação" },
+  { titulo: "Velozes e Furiosos 5: Operação Rio", ano: 2011, categoria: "Ação" },
+  { titulo: "Velozes e Furiosos 6", ano: 2013, categoria: "Ação" },
+  { titulo: "Velozes & Furiosos 7", ano: 2015, categoria: "Ação" },
+  { titulo: "Velozes e Furiosos 8", ano: 2017, categoria: "Ação" },
+  { titulo: "Velozes & Furiosos: Hobbs & Shaw", ano: 2019, categoria: "Ação / Spin-off" },
+  { titulo: "Velozes e Furiosos 9", ano: 2021, categoria: "Ação" },
+  { titulo: "Velozes e Furiosos 10", ano: 2023, categoria: "Ação" }
 ];
 
-// 2. Seleção do elemento HTML onde o catálogo será exibido
-const catalogoContainer = document.getElementById("catalogo");
+// Elementos do DOM
+const movieGrid = document.getElementById("movieGrid");
+const searchInput = document.getElementById("searchInput");
 
-// 3. Função para renderizar os filmes na página
-function carregarFilmes() {
-    // Limpa o conteúdo do container
-    catalogoContainer.innerHTML = "";
+// Função para renderizar os cartões na tela
+function renderMovies(listaFilmes) {
+  movieGrid.innerHTML = "";
 
-    // Percorre cada filme da lista
-    filmes.forEach(filme => {
-        // Cria o HTML de um cartão individual
-        const cardHTML = `
-            <div class="movie-card">
-                <img src="${filme.poster}" alt="Cartaz de ${filme.titulo}">
-                <div class="movie-info">
-                    <h3>${filme.titulo}</h3>
-                    <p>Ano: ${filme.ano}</p>
-                    <span class="badge">${filme.genero}</span>
-                </div>
-            </div>
-        `;
+  if (listaFilmes.length === 0) {
+    movieGrid.innerHTML = `<div class="no-results">Nenhum filme encontrado.</div>`;
+    return;
+  }
 
-        // Adiciona o cartão criado dentro do container
-        catalogoContainer.innerHTML += cardHTML;
-    });
+  listaFilmes.forEach((filme) => {
+    const card = document.createElement("div");
+    card.classList.add("movie-card");
+
+    card.innerHTML = `
+      <div class="poster-placeholder">
+        <span>🎬<br>${filme.titulo}</span>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">${filme.titulo}</div>
+        <div class="movie-details">
+          <span>${filme.ano}</span>
+          <span class="genre-tag">${filme.categoria}</span>
+        </div>
+      </div>
+    `;
+
+    movieGrid.appendChild(card);
+  });
 }
 
-// 4. Executa a função assim que a página carrega
-carregarFilmes();
+// Filtro em tempo real
+searchInput.addEventListener("input", (e) => {
+  const searchTerm = e.target.value.toLowerCase().trim();
+  const filmesFiltrados = filmes.filter((filme) =>
+    filme.titulo.toLowerCase().includes(searchTerm)
+  );
+  renderMovies(filmesFiltrados);
+});
+
+// Renderização inicial
+renderMovies(filmes);
