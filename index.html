@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CineCatálogo - Seus Filmes Favoritos</title>
+  <title>CineCatálogo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <div class="header-container">
-      <h1>🎬 CineCatálogo</h1>
-      <input type="text" id="searchInput" placeholder="Pesquisar filme por título...">
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">🎬 CineCatálogo</h1>
+      <div class="header__search">
+        <input 
+          type="search" 
+          id="searchInput" 
+          placeholder="Pesquisar filme..." 
+          aria-label="Pesquisar filme pelo título"
+        >
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <div id="movieGrid" class="movie-grid">
-      </div>
+    <section class="catalog-header">
+      <p id="movieCount" class="movie-count">Carregando catálogo...</p>
+    </section>
+
+    <section id="movieGrid" class="movie-grid" aria-live="polite">
+      </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 CineCatálogo - Todos os direitos reservados.</p>
+  <footer class="footer">
+    <p>&copy; 2026 CineCatálogo. Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
