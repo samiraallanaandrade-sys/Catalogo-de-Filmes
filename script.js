@@ -1,74 +1,74 @@
-// Lista de filmes agora usando nomes de classes CSS em vez de URLs
+// Lista de filmes com URLs diretas para as imagens de capa
 const filmes = [
     { 
         title: "O Poderoso Chefão", 
         synopsis: "A história da família mafiosa Corleone e a ascensão de Michael Corleone.",
         genre: "Crime / Drama",
         rating: "14 Anos",
-        cssClass: "capa-poderoso-chefao" // <--- Classe do CSS
+        cover: "https://upload.wikimedia.org/wikipedia/pt/a/af/The_Godfather_poster_1972.jpg"
     },
     { 
         title: "A Lista de Schindler", 
         synopsis: "Oskar Schindler gasta sua fortuna para salvar judeus no Holocausto.",
         genre: "Drama / História",
         rating: "14 Anos",
-        cssClass: "capa-schindler"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/a/a2/Schindler%27s_List_poster.jpg"
     },
     { 
         title: "Interestelar (2014)", 
         synopsis: "Exploradores viajam por um buraco de minhoca para salvar a humanidade.",
         genre: "Ficção Científica",
         rating: "10 Anos",
-        cssClass: "capa-interestelar"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png"
     },
     { 
         title: "Cidade de Deus (2002)", 
         synopsis: "O crescimento da violência em uma favela, visto por um jovem fotógrafo.",
         genre: "Crime / Drama",
         rating: "16 Anos",
-        cssClass: "capa-cidade-de-deus"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/1/10/Capa_Cidade_de_Deus.jpg"
     },
     { 
         title: "Matrix", 
         synopsis: "Um hacker descobre a verdadeira natureza de sua realidade.",
         genre: "Ficção / Ação",
         rating: "12 Anos",
-        cssClass: "capa-matrix"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Matrix_Poster.jpg"
     },
     { 
         title: "De Volta para o Futuro", 
         synopsis: "Um adolescente viaja acidentalmente no tempo para o ano de 1955.",
-        genre: "Aventura / Comédia",
+        genre: "Aventura",
         rating: "Livre",
-        cssClass: "capa-de-volta-futuro"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/9/97/BackFuturePoster.jpg"
     },
     { 
         title: "Batman: O Cavaleiro das Trevas", 
         synopsis: "Batman enfrenta o Coringa, um criminoso caótico e imprevisível.",
-        genre: "Ação / Policial",
+        genre: "Ação",
         rating: "12 Anos",
-        cssClass: "capa-batman"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/d/d1/Dark_Knight.jpg"
     },
     { 
-        title: "Star Wars: Ep IV - Uma Nova Esperança", 
+        title: "Star Wars: Ep IV", 
         synopsis: "Luke Skywalker se une a uma rebelião para destruir a Estrela da Morte.",
         genre: "Ficção / Aventura",
         rating: "Livre",
-        cssClass: "capa-star-wars"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/0/03/Star_Wars_1977.jpg"
     },
     { 
         title: "Velozes e Furiosos", 
         synopsis: "O início da saga de corridas de rua e a formação da 'família' de Toretto.",
         genre: "Ação",
         rating: "14 Anos",
-        cssClass: "capa-velozes"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/f/f6/Fast_and_furious_2001.jpg"
     },
     { 
-        title: "Velozes e Furiosos 5: Operação Rio", 
+        title: "Velozes e Furiosos 5", 
         synopsis: "A equipe planeja um assalto milionário no Rio de Janeiro.",
         genre: "Ação",
         rating: "14 Anos",
-        cssClass: "capa-velozes-5"
+        cover: "https://upload.wikimedia.org/wikipedia/pt/1/1c/Fast_Five_poster.jpg"
     }
 ];
 
@@ -79,9 +79,8 @@ function renderizarFilmes() {
         const card = document.createElement('article');
         card.className = 'movie-card';
 
-        // Trocamos a tag <img> por uma <div> e adicionamos a classe dinâmica do filme
         card.innerHTML = `
-            <div class="movie-cover ${filme.cssClass}" title="Capa do filme ${filme.title}"></div>
+            <img src="${filme.cover}" alt="Capa do filme ${filme.title}" class="movie-cover">
             <div class="movie-info">
                 <h2 class="movie-title">${filme.title}</h2>
                 <div class="movie-meta">
