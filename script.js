@@ -1,6 +1,6 @@
-// Lista de filmes com dados adicionados (gênero, classificação e imagem de capa)
+// Lista de filmes agora usando nomes de classes CSS em vez de URLs
 const filmes = [
-    { 
+  { 
         title: "O Poderoso Chefão", 
         synopsis: "A história da família mafiosa Corleone e a ascensão de Michael Corleone.",
         genre: "Crime / Drama",
@@ -70,22 +70,17 @@ const filmes = [
         rating: "14 Anos",
         cover: "https://via.placeholder.com/300x450/222222/ffffff?text=Velozes+5"
     }
-    // Nota: Reduzi a lista dos Velozes e Furiosos no código para exemplo, mas você pode adicionar os outros seguindo exatamente o mesmo formato!
-];
 
-// Seleciona o container onde os filmes vão aparecer
 const movieContainer = document.getElementById('movie-container');
 
-// Função para renderizar os filmes
 function renderizarFilmes() {
     filmes.forEach(filme => {
-        // Cria o elemento do cartão
         const card = document.createElement('article');
         card.className = 'movie-card';
 
-        // Monta o conteúdo HTML interno do cartão
+        // Trocamos a tag <img> por uma <div> e adicionamos a classe dinâmica do filme
         card.innerHTML = `
-            <img src="${filme.cover}" alt="Capa do filme ${filme.title}" class="movie-cover">
+            <div class="movie-cover ${filme.cssClass}" title="Capa do filme ${filme.title}"></div>
             <div class="movie-info">
                 <h2 class="movie-title">${filme.title}</h2>
                 <div class="movie-meta">
@@ -96,10 +91,8 @@ function renderizarFilmes() {
             </div>
         `;
 
-        // Adiciona o cartão ao container na página
         movieContainer.appendChild(card);
     });
 }
 
-// Executa a função quando a página carregar
 document.addEventListener('DOMContentLoaded', renderizarFilmes);
