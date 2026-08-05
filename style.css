@@ -67,43 +67,43 @@ main {
 /* IMAGENS DOS FILMES DIRETAMENTE NO CSS     */
 /* ========================================= */
 .capa-poderoso-chefao {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=O+Poderoso+Chefão');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/a/af/The_Godfather_poster_1972.jpg');
 }
 
 .capa-schindler {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=A+Lista+de+Schindler');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/a/a2/Schindler%27s_List_poster.jpg');
 }
 
 .capa-interestelar {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Interestelar');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png');
 }
 
 .capa-cidade-de-deus {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Cidade+de+Deus');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/1/10/Capa_Cidade_de_Deus.jpg');
 }
 
 .capa-matrix {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Matrix');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Matrix_Poster.jpg');
 }
 
 .capa-de-volta-futuro {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=De+Volta+para+o+Futuro');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/9/97/BackFuturePoster.jpg');
 }
 
 .capa-batman {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Batman');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/d/d1/Dark_Knight.jpg');
 }
 
 .capa-star-wars {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Star+Wars+IV');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg');
 }
 
 .capa-velozes {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Velozes+e+Furiosos');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/f/f6/Fast_and_furious_2001.jpg');
 }
 
 .capa-velozes-5 {
-    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Velozes+5');
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/1/1c/Fast_Five_poster.jpg');
 }
 
 /* Estilos de texto e informações do filme */
