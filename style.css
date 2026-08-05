@@ -53,11 +53,62 @@ main {
     box-shadow: 0 8px 20px rgba(229, 9, 20, 0.4);
 }
 
+/* ... mantenha o código anterior (body, header, .movie-card, etc) ... */
+
+/* Novo estilo para a capa do filme usando background */
 .movie-cover {
     width: 100%;
     height: 400px;
-    object-fit: cover;
-    display: block;
+    background-size: cover;          /* Faz a imagem preencher todo o espaço */
+    background-position: center;     /* Centraliza a imagem */
+    background-repeat: no-repeat;    /* Evita que a imagem se repita */
+    border-bottom: 2px solid #333;
+}
+
+/* ========================================= */
+/* IMAGENS DOS FILMES DIRETAMENTE NO CSS     */
+/* ========================================= */
+.capa-poderoso-chefao {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=O+Poderoso+Chefão');
+}
+
+.capa-schindler {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=A+Lista+de+Schindler');
+}
+
+.capa-interestelar {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Interestelar');
+}
+
+.capa-cidade-de-deus {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Cidade+de+Deus');
+}
+
+.capa-matrix {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Matrix');
+}
+
+.capa-de-volta-futuro {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=De+Volta+para+o+Futuro');
+}
+
+.capa-batman {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Batman');
+}
+
+.capa-star-wars {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Star+Wars+IV');
+}
+
+.capa-velozes {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Velozes+e+Furiosos');
+}
+
+.capa-velozes-5 {
+    background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Velozes+5');
+}
+
+/* ... mantenha o resto do código CSS (.movie-info, .movie-title, etc) ... */
 }
 
 .movie-info {
