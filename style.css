@@ -65,9 +65,6 @@ main {
     border-bottom: 2px solid #333;
 }
 
-/* ========================================= */
-/* IMAGENS DOS FILMES DIRETAMENTE NO CSS     */
-/* ========================================= */
 .capa-poderoso-chefao {
     background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=O+Poderoso+Chefão');
 }
@@ -106,9 +103,7 @@ main {
 
 .capa-velozes-5 {
     background-image: url('https://via.placeholder.com/300x450/222222/ffffff?text=Velozes+5');
-}
 
-/* ... mantenha o resto do código CSS (.movie-info, .movie-title, etc) ... */
 }
 
 .movie-info {
