@@ -5,35 +5,30 @@ const filmes = [
         synopsis: "A história da família mafiosa Corleone e a ascensão de Michael Corleone.",
         genre: "Crime / Drama",
         rating: "14 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/a/af/The_Godfather_poster_1972.jpg"
     },
     { 
         title: "A Lista de Schindler", 
         synopsis: "Oskar Schindler gasta sua fortuna para salvar judeus no Holocausto.",
         genre: "Drama / História",
         rating: "14 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/a/a2/Schindler%27s_List_poster.jpg"
     },
     { 
         title: "Interestelar (2014)", 
         synopsis: "Exploradores viajam por um buraco de minhoca para salvar a humanidade.",
         genre: "Ficção Científica",
         rating: "10 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png"
     },
     { 
         title: "Cidade de Deus (2002)", 
         synopsis: "O crescimento da violência em uma favela, visto por um jovem fotógrafo.",
         genre: "Crime / Drama",
         rating: "16 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/1/10/Capa_Cidade_de_Deus.jpg"
     },
     { 
         title: "Matrix", 
         synopsis: "Um hacker descobre a verdadeira natureza de sua realidade.",
         genre: "Ficção / Ação",
         rating: "12 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Matrix_Poster.jpg"
     },
     { 
         title: "De Volta para o Futuro", 
@@ -61,14 +56,12 @@ const filmes = [
         synopsis: "O início da saga de corridas de rua e a formação da 'família' de Toretto.",
         genre: "Ação",
         rating: "14 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/f/f6/Fast_and_furious_2001.jpg"
     },
     { 
         title: "Velozes e Furiosos 5", 
         synopsis: "A equipe planeja um assalto milionário no Rio de Janeiro.",
         genre: "Ação",
         rating: "14 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/1/1c/Fast_Five_poster.jpg"
     }
 ];
 
