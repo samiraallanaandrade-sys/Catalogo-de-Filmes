@@ -3,7 +3,7 @@ const filmes = [
         title: "O Poderoso Chefão", 
         synopsis: "A história da família mafiosa Corleone e a ascensão de Michael Corleone.",
         genre: "Crime / Drama", rating: "14 Anos",
-        cover: "https://upload.wikimedia.org/wikipedia/pt/a/af/The_Godfather_poster_1972.jpg",
+        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTccYXqICI5vKHx8aACcC7_CD1vY2-Cjok6epN8-ck2GhZVml3k74zzAeRl4222BSjo1mZHOutAYJxeuwaVjH9qEvCf45cuCB-y02Gm5l6AWQ&s=10",
         hearts: 120, likes: 450
     },
     { 
