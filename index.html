@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria de Filmes</title>
+
     <style>
         :root {
             --bg-color: #121212;
             --card-bg: #1e1e1e;
             --text-color: #f5f5f5;
             --accent-color: #e50914;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -50,7 +55,7 @@
             background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -66,10 +71,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: #777;
-            /* Placeholder pattern if no image is loaded */
-            background-image: repeating-linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222), repeating-linear-gradient(45deg, #222 25%, #333 25%, #333 75%, #222 75%, #222);
+            overflow: hidden;
+
+            background-image:
+                repeating-linear-gradient(
+                    45deg,
+                    #222 25%,
+                    transparent 25%,
+                    transparent 75%,
+                    #222 75%,
+                    #222
+                ),
+                repeating-linear-gradient(
+                    45deg,
+                    #222 25%,
+                    #333 25%,
+                    #333 75%,
+                    #222 75%,
+                    #222
+                );
+
             background-position: 0 0, 10px 10px;
             background-size: 20px 20px;
         }
@@ -78,6 +99,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+        }
+
+        .sem-imagem {
+            padding: 20px;
+            text-align: center;
+            color: #aaa;
         }
 
         .card-content {
@@ -94,60 +122,109 @@
             font-size: 0.95rem;
             line-height: 1.5;
             color: #ccc;
+            margin: 0;
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <h1>Minha Coleção Épica</h1>
     </header>
 
-    <div class="container">
-        <div class="grid" id="movieGrid">
-            <!-- Os filmes serão injetados aqui pelo JavaScript -->
-        </div>
-    </div>
+    <main class="container">
+        <div class="grid" id="movieGrid"></div>
+    </main>
 
     <script>
-        // Lista de filmes com títulos e sinopses
         const movies = [
-            { title: "Rio", synopsis: "Uma arara-azul doméstica viaja para o Rio de Janeiro para encontrar a última fêmea da sua espécie e acaba vivendo uma grande aventura." },
-            { title: "A Lista de Schindler", synopsis: "Oskar Schindler gasta sua fortuna para salvar judeus no Holocausto." },
-            { title: "Interestelar ", synopsis: "Exploradores viajam por um buraco de minhoca para salvar a humanidade." },
-            { title: "Cidade de Deus ", synopsis: "O crescimento da violência em uma favela, visto por um jovem fotógrafo." },
-            { title: "Matrix", synopsis: "Um hacker descobre a verdadeira natureza de sua realidade." },
-            { title: "De Volta para o Futuro", synopsis: "Um adolescente viaja acidentalmente no tempo para o ano de 1955." },
-            { title: "Batman: O Cavaleiro das Trevas", synopsis: "Batman enfrenta o Coringa, um criminoso caótico e imprevisível." },
-            { title: "Star Wars: Ep IV - Uma Nova Esperança", synopsis: "Luke Skywalker se une a uma rebelião para destruir a Estrela da Morte." },
-            { title: "Velozes e Furiosos", synopsis: "O início da saga de corridas de rua e a formação da 'família' de Toretto." },
-            { title: "+ Velozes + Furiosos", synopsis: "Brian O'Conner se infiltra no crime organizado em Miami." },
-            { title: "Velozes e Furiosos 4 ", synopsis: "Dom e Brian se reúnem para derrubar um cartel de drogas." },
-            { title: "Velozes e Furiosos 5: Operação Rio", synopsis: "A equipe planeja um assalto milionário no Rio de Janeiro." },
+            {
+                title: "Rio",
+                synopsis: "Uma arara-azul doméstica viaja para o Rio de Janeiro para encontrar a última fêmea da sua espécie e acaba vivendo uma grande aventura.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxfCJ8I5hTj3fvoS1mE__YORS_pHfWi1R_mtSwrvZToMVRnOAS5leF1OTrxjPH13zBnKnZJspcghkBjcQDUYGjz_p2itCriE932BhzTKc1&s=10"
+            },
+            {
+                title: "A Lista de Schindler",
+                synopsis: "Oskar Schindler gasta sua fortuna para salvar judeus no Holocausto.",
+                image: ""
+            },
+            {
+                title: "Interestelar",
+                synopsis: "Exploradores viajam por um buraco de minhoca para salvar a humanidade.",
+                image: ""
+            },
+            {
+                title: "Cidade de Deus",
+                synopsis: "O crescimento da violência em uma favela, visto por um jovem fotógrafo.",
+                image: ""
+            },
+            {
+                title: "Matrix",
+                synopsis: "Um hacker descobre a verdadeira natureza de sua realidade.",
+                image: ""
+            },
+            {
+                title: "De Volta para o Futuro",
+                synopsis: "Um adolescente viaja acidentalmente no tempo para o ano de 1955.",
+                image: ""
+            },
+            {
+                title: "Batman: O Cavaleiro das Trevas",
+                synopsis: "Batman enfrenta o Coringa, um criminoso caótico e imprevisível.",
+                image: ""
+            },
+            {
+                title: "Star Wars: Ep IV - Uma Nova Esperança",
+                synopsis: "Luke Skywalker se une a uma rebelião para destruir a Estrela da Morte.",
+                image: ""
+            },
+            {
+                title: "Velozes e Furiosos",
+                synopsis: "O início da saga de corridas de rua e a formação da 'família' de Toretto.",
+                image: ""
+            },
+            {
+                title: "+ Velozes + Furiosos",
+                synopsis: "Brian O'Conner se infiltra no crime organizado em Miami.",
+                image: ""
+            },
+            {
+                title: "Velozes e Furiosos 4",
+                synopsis: "Dom e Brian se reúnem para derrubar um cartel de drogas.",
+                image: ""
+            },
+            {
+                title: "Velozes e Furiosos 5: Operação Rio",
+                synopsis: "A equipe planeja um assalto milionário no Rio de Janeiro.",
+                image: ""
+            }
         ];
 
-        const grid = document.getElementById('movieGrid');
+        const grid = document.getElementById("movieGrid");
 
-        // Função para criar os cartões dinamicamente
         movies.forEach(movie => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            
-            // Você pode adicionar links reais de imagens na tag <img> se desejar.
-            <img> " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxfCJ8I5hTj3fvoS1mE__YORS_pHfWi1R_mtSwrvZToMVRnOAS5leF1OTrxjPH13zBnKnZJspcghkBjcQDUyGjz_p2itCriE932BhzTKc1&s=10
-            // Atualmente, usa um espaço estilizado caso não haja imagem.
+            const card = document.createElement("div");
+            card.className = "card";
+
+            const imageContent = movie.image
+                ? `<img src="${movie.image}" alt="Capa do filme ${movie.title}">`
+                : `<span class="sem-imagem">Imagem indisponível</span>`;
+
             card.innerHTML = `
                 <div class="card-img">
-                    <span style="padding: 20px; text-align: center;">Imagem Indisponível<br><small>(Adicione a URL no código)</small></span>
+                    ${imageContent}
                 </div>
+
                 <div class="card-content">
                     <h2 class="card-title">${movie.title}</h2>
                     <p class="card-synopsis">${movie.synopsis}</p>
                 </div>
             `;
-            
+
             grid.appendChild(card);
         });
     </script>
+
 </body>
 </html>
