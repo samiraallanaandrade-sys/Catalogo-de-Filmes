@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 header {
@@ -36,20 +37,27 @@ main {
     padding: 2rem 1rem;
 }
 
+/* Grade dos filmes */
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
 }
 
+/* Card */
 .movie-card {
     background-color: #1e1e1e;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
+    min-width: 0;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .movie-card:hover {
@@ -57,30 +65,39 @@ main {
     box-shadow: 0 8px 20px rgba(229, 9, 20, 0.4);
 }
 
+/* Capa */
 .movie-cover {
     width: 100%;
     height: 400px;
     object-fit: cover;
+    display: block;
+    background-color: #292929;
     border-bottom: 2px solid #333;
 }
 
+/* Informações */
 .movie-info {
     padding: 1.5rem;
-    flex-grow: 1;
+    flex: 1;
+
     display: flex;
     flex-direction: column;
 }
 
 .movie-title {
     font-size: 1.25rem;
+    line-height: 1.3;
     color: #e50914;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
 }
 
+/* Gênero e classificação */
 .movie-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+
     margin-bottom: 1rem;
     font-size: 0.85rem;
 }
@@ -91,17 +108,135 @@ main {
 
 .movie-rating {
     background-color: #e50914;
-    color: white;
+    color: #ffffff;
+
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
+
     font-weight: bold;
+    white-space: nowrap;
 }
 
+/* Sinopse */
 .movie-synopsis {
     font-size: 0.95rem;
     color: #cccccc;
+    margin-bottom: 1.2rem;
+
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* Botões */
+.movie-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.btn-action {
+    flex: 1;
+
+    border: 1px solid #444;
+    background-color: #292929;
+    color: #ffffff;
+
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 0.95rem;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btn-action:hover {
+    background-color: #383838;
+    transform: scale(1.03);
+}
+
+.btn-action:active {
+    transform: scale(0.97);
+}
+
+/* Coração ativo */
+.btn-action.active-heart {
+    background-color: rgba(229, 9, 20, 0.2);
+    border-color: #e50914;
+    color: #ff3040;
+}
+
+/* Like ativo */
+.btn-action.active-like {
+    background-color: rgba(0, 123, 255, 0.2);
+    border-color: #007bff;
+    color: #4da3ff;
+}
+
+/* Contadores */
+.count-heart,
+.count-like {
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    header {
+        padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .movie-cover {
+        height: 350px;
+    }
+
+    .movie-info {
+        padding: 1rem;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 550px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    main {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .movie-cover {
+        height: 430px;
+    }
+
+    .movie-title {
+        font-size: 1.2rem;
+    }
+
+    .movie-actions {
+        gap: 8px;
+    }
 }
